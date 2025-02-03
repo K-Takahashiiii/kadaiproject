@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>削除確認</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body class="body">
+    <header>
+        <h1 id="title">削除確認</h1>
+    </header>
+    <p>本当に"{{ article.title }}"を削除しますか？</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="button">削除</button>
+    </form>
+    <li class="migi">
+        <a href="{% url 'index' %}" class="link_sub">戻る</a>
+    </li>
+</body>
+</html>

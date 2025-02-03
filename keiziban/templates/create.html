@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規登録</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body class="body">
+    <header>
+        <h1 id="title">新規登録</h1>
+    </header>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button">登録</button>
+    </form>
+    <li class="migi" style="list-style: none;">
+        <a href="{% url 'index' %}" class="link_sub">戻る</a>
+    </li>
+</body>
+</html>
